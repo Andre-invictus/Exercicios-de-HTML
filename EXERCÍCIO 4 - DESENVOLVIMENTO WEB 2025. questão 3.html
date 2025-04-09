@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Avaliação do Vasco da Gama</title>
+  </head>
+  <body>
+    <h2>Avaliação do Desempenho do Vascão</h2>
+
+    <input type="number" id="nota" min="0" max="10" step="0.1">
+    <button onclick="avaliarNota()">Avaliar</button>
+
+    <p id="resultado"></p>
+
+    <script>
+      function avaliarNota() {
+        let nota = parseFloat(document.getElementById("nota").value);
+        let resultado = document.getElementById("resultado");
+
+        if (isNaN(nota) || nota < 0 || nota > 10) {
+          resultado.innerText = "Nota Errada, Digite um valor entre 0 e 10.";
+        } else if (nota >= 7) {
+          resultado.innerText = "Nota digna do Vascão campeão! Como a professora Simone.";
+        } else if (nota >= 5) {
+          resultado.innerText = "Quase lá Isso foi tipo um empate suado contra o flamengo. Recuperação.";
+        } else {
+          resultado.innerText = "Ih rapaz... tipo rebaixamento tipo ser flamenguista reprovado.";
+        }
+      }
+    </script>
+  </body>
+</html>
