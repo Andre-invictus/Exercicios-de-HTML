@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lista de Frutas</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f5f5f5;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    ul {
+      background-color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    li {
+      padding: 8px;
+      border-bottom: 1px solid #ddd;
+    }
+    li:last-child {
+      border-bottom: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Frutas disponíveis:</h1>
+  <ul id="lista-frutas">
+    
+  </ul>
+
+  <script>
+    
+    const frutas = ["Maçã", "Banana", "Laranja", "Abacaxi", "Manga"];
+    const lista = document.getElementById("lista-frutas");
+    for (let i = 0; i < frutas.length; i++) {   
+      const item = document.createElement("li");
+      item.textContent = frutas[i];
+      lista.appendChild(item);
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Goleadores do Vasco</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1c1c1c;
+      color: #ffffff;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #ffffff;
+      border-bottom: 2px solid #e60000;
+      padding-bottom: 10px;
+    }
+
+    .jogador {
+      background-color: #2e2e2e;
+      padding: 10px;
+      margin-bottom: 10px;
+      border-left: 5px solid #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 1px 4px rgba(255, 255, 255, 0.1);
+    }
+
+    .artilheiro {
+      border-left-color: #e60000;
+      font-weight: bold;
+    }
+
+    em {
+      color: #e60000;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Goleadores do Vasco da Gama</h1>
+  <p>Abaixo está a lista de jogadores e o número de gols. Quem fez 5 ou mais gols é destacado como <em>Artilheiro</em>.</p>
+  <div id="resultado">
+  </div>
+
+  <script>
+    const jogadores = {
+      "Pablo Vegetti": 4,
+      "Dimitri Payet": 2,
+      "David": 1,
+      "Rayan": 1,
+      "Philippe Coutinho": 1
+    };
+
+    const resultadoDiv = document.getElementById("resultado");
+    for (let nome in jogadores) {
+      let gols = jogadores[nome];
+      let status = "";
+
+      if (gols >= 5) {
+        status = "Artilheiro";
+      } else {
+        status = "Titular";
+      }
+      const divJogador = document.createElement("div");
+      divJogador.classList.add("jogador");
+
+      if (status === "Artilheiro") {
+        divJogador.classList.add("artilheiro");
+      }
+
+      divJogador.innerHTML = `<strong>${nome}</strong> - Gols: ${gols} - <em>${status}</em>`;
+
+      resultadoDiv.appendChild(divJogador);
+    }
+  </script>
+
+</body>
+</html>
